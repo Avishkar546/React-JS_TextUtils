@@ -4,11 +4,13 @@ export default function Text(props) {
     const UpperCase = () => {
         let t = text.toUpperCase();
         setText(t);
+        props.showAlert("Convert to uppercase","success");
     }
 
     const LowerCase = () => {
         let t = text.toLowerCase();
         setText(t);
+        props.showAlert("Convert to lowercase","success");
     }
 
     const Length = () => {
@@ -19,11 +21,13 @@ export default function Text(props) {
     const spaceRemove = () =>{
        let t = text.split(/[ ]+/);
        setText(t.join(" "));
+       props.showAlert("Spaces remove from your text","success");
     }
     const copyFunction = () =>{
         var t =document.getElementById("exampleFormControlTextarea1");
         t.select();
         navigator.clipboard.writeText(t.value);
+        props.showAlert("Copied to Clipboard !");
     }
 
     const onChangeFunction = (event) => {
